@@ -2,13 +2,37 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.zhe-zhang.com/blog</id>
     <title>Blog</title>
-    <updated>2020-03-23T03:54:11.396Z</updated>
+    <updated>2020-03-23T13:08:49.302Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.zhe-zhang.com/blog"/>
     <link rel="self" href="https://www.zhe-zhang.com/blog/atom.xml"/>
     <logo>https://www.zhe-zhang.com/blog/images/avatar.png</logo>
     <icon>https://www.zhe-zhang.com/blog/favicon.ico</icon>
     <rights>All rights reserved 2020, Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[相机参数与基础矩阵笔记]]></title>
+        <id>https://www.zhe-zhang.com/blog/post/20200323_camera_pose_fundmat/</id>
+        <link href="https://www.zhe-zhang.com/blog/post/20200323_camera_pose_fundmat/">
+        </link>
+        <updated>2020-03-23T12:59:14.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="姿态">姿态</h2>
+<p>机器人学<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>中姿态的含义<br>
+相机外参的含义<br>
+两种表达的相互变换</p>
+<h2 id="基础矩阵">基础矩阵</h2>
+<p>Hartley书<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>中相机1是单位外参, 实际使用中如何变换</p>
+<h2 id="参考资料">参考资料</h2>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>T. D. Barfoot, State Estimation for Robotics. Cambridge: Cambridge University Press, 2017. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>R. Hartley and A. Zisserman, Multiple view geometry in computer vision. 2004. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://www.zhe-zhang.com/blog/post/hello-gridea/</id>

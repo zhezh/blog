@@ -4,49 +4,58 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>关于 - Blog</title>
+<title>相机参数与基础矩阵笔记 - Blog</title>
 <link rel="shortcut icon" href="https://www.zhe-zhang.com/blog/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhezh/paper-reading@latest/media/css/tailwind.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhezh/paper-reading@latest/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="关于 - Blog - Atom Feed" href="https://www.zhe-zhang.com/blog/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="相机参数与基础矩阵笔记 - Blog - Atom Feed" href="https://www.zhe-zhang.com/blog/atom.xml">
 
     
 
-  <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
+  <meta name="description" content="姿态
+机器人学[1]中姿态的含义
+相机外参的含义
+两种表达的相互变换
+基础矩阵
+Hartley书[2]中相机1是单位外参, 实际使用中如何变换
+参考资料
 
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-..." />
-  <meta property="og:title" content="关于 - Blog">
-  <meta property="og:description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
 
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-..." />
+
+T. D. Barfoot, State Estimation for Robo..." />
+  <meta property="og:title" content="相机参数与基础矩阵笔记 - Blog">
+  <meta property="og:description" content="姿态
+机器人学[1]中姿态的含义
+相机外参的含义
+两种表达的相互变换
+基础矩阵
+Hartley书[2]中相机1是单位外参, 实际使用中如何变换
+参考资料
+
+
+
+T. D. Barfoot, State Estimation for Robo..." />
   <meta property="og:type" content="articles">
-  <meta property="og:url" content="https://www.zhe-zhang.com/blog/post/about/" />
+  <meta property="og:url" content="https://www.zhe-zhang.com/blog/post/20200323_camera_pose_fundmat/" />
   <meta property="og:image" content="https://www.zhe-zhang.com/blog/images/avatar.png">
   <meta property="og:image:height" content="630">
   <meta property="og:image:width" content="1200">
-  <meta name="twitter:title" content="关于 - Blog">
-  <meta name="twitter:description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
+  <meta name="twitter:title" content="相机参数与基础矩阵笔记 - Blog">
+  <meta name="twitter:description" content="姿态
+机器人学[1]中姿态的含义
+相机外参的含义
+两种表达的相互变换
+基础矩阵
+Hartley书[2]中相机1是单位外参, 实际使用中如何变换
+参考资料
 
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-...">
+
+
+T. D. Barfoot, State Estimation for Robo...">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://www.zhe-zhang.com/blog/post/about/">
+  <link rel="canonical" href="https://www.zhe-zhang.com/blog/post/20200323_camera_pose_fundmat/">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
@@ -68,21 +77,50 @@
     <div class="max-w-4xl w-full mx-auto">
       <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
         <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
-          关于
+          相机参数与基础矩阵笔记
         </h1>
         
         <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2019-01-25 · 1 min read</div>
+          <div class="text-gray-400 text-sm mr-4">2020-03-23 · 1 min read</div>
+          
+            <a href="https://www.zhe-zhang.com/blog/tag/H58qNwkOr/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              Camera
+            </a>
+          
+            <a href="https://www.zhe-zhang.com/blog/tag/FJkaRTQ_DP/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              Pose
+            </a>
+          
+            <a href="https://www.zhe-zhang.com/blog/tag/ACAEqONKwy/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              Multiview
+            </a>
+          
+            <a href="https://www.zhe-zhang.com/blog/tag/b-bUn5cy-H/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              Geometry
+            </a>
           
         </div>
         <div class="markdown mb-8" v-pre>
-		    <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+		    <h2 id="姿态">姿态</h2>
+<p>机器人学<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>中姿态的含义<br>
+相机外参的含义<br>
+两种表达的相互变换</p>
+<h2 id="基础矩阵">基础矩阵</h2>
+<p>Hartley书<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>中相机1是单位外参, 实际使用中如何变换</p>
+<h2 id="参考资料">参考资料</h2>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>T. D. Barfoot, State Estimation for Robotics. Cambridge: Cambridge University Press, 2017. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>R. Hartley and A. Zisserman, Multiple view geometry in computer vision. 2004. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 			
 
         </div>
@@ -127,10 +165,9 @@
         <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
+<li><a href="#%E5%A7%BF%E6%80%81">姿态</a></li>
+<li><a href="#%E5%9F%BA%E7%A1%80%E7%9F%A9%E9%98%B5">基础矩阵</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 </li>
 </ul>
